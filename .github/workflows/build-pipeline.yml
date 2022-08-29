@@ -17,6 +17,12 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm ci
+      - name: lint
+        run: echo "linting"
+      - name: test
+        run: npm test
+      - name: build
+        run: npm run build
       # Step 3 - Add tests and linting here
   deploy:
     needs: build
@@ -29,4 +35,9 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm ci
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: dist
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
