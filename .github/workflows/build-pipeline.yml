@@ -10,7 +10,8 @@ jobs:
   call-of-the-environment:
     runs-on: ubuntu-latest
     steps:
-      name: "Call me by my $name"
+    - uses: actions/checkout@v2
+    - name: "Call me by my $name"
       run: echo "I am $NAME"
       env:
         NAME: Tommy
