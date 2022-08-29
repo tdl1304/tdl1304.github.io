@@ -28,10 +28,10 @@ jobs:
           node-version: '14.x'
       - name: npm dependencies
         run: npm ci
-      - name: typescript and css format check
-        run: |
-          npm run lint:ts
-          npm run lint:css
+      - name: Run typescript lint and format check
+        run: npm run lint:ts
+      - name: Run styles lint and format check
+        run: npm run lint:css
       - name: build and test
         run: |
           npm run build
