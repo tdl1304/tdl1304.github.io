@@ -7,6 +7,15 @@ on:
     branches: [ develop ]
 
 jobs:
+  call-of-the-environment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: "Call me by my $name"
+      run: echo "I am $NAME"
+      env:
+        NAME: Tommy
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -28,6 +37,8 @@ jobs:
       #test and build
       - name: test
         run: npm test
+      - name: build
+        run: npm run build
       
   build-and-deploy:
     needs: test
