@@ -13,6 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: "Call me by my $name"
       run: echo "I am $NAME"
+    - name: "Call password"
+      run: echo "${{secrets.PASSWORD}}"
       env:
         NAME: Tommy
 
